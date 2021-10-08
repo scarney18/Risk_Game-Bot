@@ -1,0 +1,28 @@
+GumBumBot Algorithm:
+
+Aggressive bot
+
+Reinforcement: The bot will find the weakest country, the country it owns that is most outnumbered by the enemies' adjacent countries
+If it can't find any country bordering an enemy then it will choose a random one of its countries bordering a neutral to reinforce.
+If it owns a certain proportion of continents (49% of Australia and South America, 70% of others) and the remaining countries not owned by the bot are outnumbered 4 to 1 
+by the countries the bot owns bordering them + the bots remaining unplaced reinforcements, the bot will put all its units in one of the bordering countries. Aggressive continent taking strategy.
+
+Neutral Unit Placement: Finds the neutral country which borders the most of the enemie's countries and the least of the bot's countries
+
+Card Exchange: The bot exchanges cards whenever it has 3 cards it can exchange.
+
+Battle: Gets all possible attacks and with that finds all attacks with probability of 50% or greater. 
+Then adds to those probabilities based on 2 factors: Whether the defending country of an attack is neutral or not.
+If the attack success will lead to a large enough proportion of a continent being taken.
+This effectively weights the attacks based on how much of an advantage it will give the bot in the game.
+
+Defense: Always defends with the most units possible
+
+Move In: Always moves in all units possible
+
+Fortify: The bot's country with the most units, that is surrounded by other bot owned countries, will have its units moved towards the countries that border different continents. 
+If there are no countries that are surrounded by bot owned countries, then the bot will check which of its countries are most in danger, 
+it does this by finding which of its countries are adjacent to the highest threat enemy country (enemy country with the most units that borders a bot country), 
+the bot moves half the units available from a neighbouring country to the country adjacent to the highest threat enemy country. 
+If the bot is unable to move at least 1 unit from one country to another, then it will skip fortifying.
+
